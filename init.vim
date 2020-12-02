@@ -52,7 +52,7 @@ let g:NERDTreeStatusline = ''
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Toggle
-nnoremap <silent> <C-x> :NERDTreeToggle<CR>
+nnoremap <silent> <C-m> :NERDTreeToggle<CR>
 
 
 " open new split panes to right and below
