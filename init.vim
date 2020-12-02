@@ -3,10 +3,15 @@
 call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 
 " Config  
@@ -53,23 +58,32 @@ nnoremap <silent> <C-x> :NERDTreeToggle<CR>
 " open new split panes to right and below
 set splitright
 set splitbelow
-" turn terminal to normal mode with escape
+" turn terminal to normal mode with ctrl-c 
 tnoremap <C-c> <C-\><C-n>
 " start terminal in insert mode
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 " open terminal on ctrl+n
 function! OpenTerminal()
-  split term://bash
+  split term://zsh
   resize 10
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
 
 " use alt+hjkl to move between split/vsplit panels
-tnoremap <A-h> <C-\><C-n><C-w>
-tnoremap <A-j> <C-\><C-n><C-w>
-tnoremap <A-k> <C-\><C-n><C-w>
-tnoremap <A-l> <C-\><C-n><C-w>
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>
+nnoremap <A-l> <C-w>l
+
+nnoremap <C-f> :FZF<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \}
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
