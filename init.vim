@@ -3,7 +3,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+  let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-eslint', 'coc-pairs'] 
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
@@ -33,8 +33,6 @@ set nobackup
 set noswapfile
 set nowrap
 
-  "setup
-
 
   "theme
 if (has("termguicolors"))
@@ -52,7 +50,7 @@ let g:NERDTreeStatusline = ''
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Toggle
-nnoremap <silent> <C-m> :NERDTreeToggle<CR>
+nnoremap <silent><C-b> :NERDTreeToggle<CR>
 
 
 " open new split panes to right and below
@@ -79,11 +77,17 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-nnoremap <C-f> :FZF<CR>
+" file finder set up 
+nnoremap <C-p> :FZF<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
+" ignores .git, node_modules, etc...
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
+
+" Tab Remaping
+nnoremap <silent><C-s> :tabnext<CR>
+nnoremap <silent><C-a> :tabprevious<CR>
