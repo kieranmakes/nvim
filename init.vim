@@ -1,4 +1,5 @@
 
+
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim'
@@ -9,11 +10,16 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'rhysd/open-pdf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
+
 
 " Config  
   
@@ -41,10 +47,11 @@ let g:coc_global_extensions = [
   \'coc-css',
   \'coc-html',
   \'coc-json',
-  \'coc-prettier',
+  \'coc-prettier', 
   \'coc-tsserver',
-  \'coc-eslint',
-  \'coc-pairs'] 
+  \ 'es-lint'
+  \'coc-pairs'
+  \ ] 
 
   " NERDTree Git  
 let g:NERDTreeGitStatusIndicatorMapCustom = {
@@ -59,7 +66,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
-
+    
   " git changes in editor
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = 'M'
@@ -67,6 +74,34 @@ let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '-'
 let g:gitgutter_sign_modified_removed = '-'
 
+
+let g:indentLine_char = '⎸'
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
   " theme
 if (has("termguicolors"))
@@ -76,39 +111,8 @@ syntax enable
 colorscheme dracula
 
 
-" set filetypes as typescriptreact
+  " set filetypes as typescriptreact
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
-
-" dark red
-"hi tsxTagName guifg=#E06C75
-"hi tsxComponentName guifg=#E06C75
-"hi tsxCloseComponentName guifg=#E06C75
-
-" orange
-"hi tsxCloseString guifg=#F99575
-"hi tsxCloseTag guifg=#F99575
-"hi tsxCloseTagName guifg=#F99575
-"hi tsxAttributeBraces guifg=#F99575
-"hi tsxEqual guifg=#F99575
-"
-"" yellow
-"hi tsxAttrib guifg=#F8BD7F cterm=italic
-"
-"" light-grey
-"hi tsxTypeBraces guifg=#999999
-"" dark-grey
-"hi tsxTypes guifg=#666666
-"
-"hi ReactState guifg=#C176A7
-"hi ReactProps guifg=#D19A66
-"hi ApolloGraphQL guifg=#CB886B
-"hi Events ctermfg=204 guifg=#56B6C2
-"hi ReduxKeywords ctermfg=204 guifg=#C678DD
-"hi ReduxHooksKeywords ctermfg=204 guifg=#C176A7
-"hi WebBrowser ctermfg=204 guifg=#56B6C2
-"hi ReactLifeCycleMethods ctermfg=204 guifg=#D19A66
-
-
 
   "NERDTree
 let g:NERDTreeShowHidden = 1

@@ -14,5 +14,7 @@
     "javascriptreact",
     "typescript.tsx"
   ],
+  "diagnostic.checkCurrentLine": true,
+
   "coc.preferences.diagnostic.virtualText": true
 }
