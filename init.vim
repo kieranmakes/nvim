@@ -22,7 +22,8 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescript.tsx', 'typescriptreact']} 
-"Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescript.tsx', 'typescriptreact']}
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 
@@ -97,6 +98,12 @@ endif
 syntax enable
 colorscheme dracula
 
+  " cursor line
+set cursorline
+hi cursorline cterm=none term=none
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+highlight CursorLine guibg=#333333 ctermbg=234
 
 augroup SyntaxSettings
     autocmd!
@@ -150,10 +157,6 @@ let g:fzf_action = {
 " ignores .git, node_modules, etc...
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
-
-" Tab Remaping
-nnoremap <silent><C-s> :tabnext<CR>
-nnoremap <silent><C-a> :tabprevious<CR>
 
     "JSX set up
   let g:yats_host_keyword = 1
@@ -306,3 +309,69 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+
+
+
+" Tab Remaping
+nnoremap <silent><C-s> :tabnext<CR>
+nnoremap <silent><C-a> :tabprevious<CR>
+
+" open new split panes to right and below
+set splitright
+set splitbelow
+" turn terminal to normal mode with ctrl-c 
+tnoremap <C-x> <C-\><C-n>
+" start terminal in insert mode
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+" open terminal on ctrl+n
+function! OpenTerminal()
+  split term://zsh
+  resize 10
+endfunction
+nnoremap <c-n> :call OpenTerminal()<CR>
+
+" use alt+hjkl to move between split/vsplit panels
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
+" file finder set up 
+nnoremap <C-p> :FZF<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \}
+" ignores .git, node_modules, etc...
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespce = 1
+
