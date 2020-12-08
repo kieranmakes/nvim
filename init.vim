@@ -9,23 +9,22 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'rhysd/open-pdf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'justinmk/vim-sneak'
-Plug 'yuezk/vim-js', {'for': ['javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescript.tsx', 'typescriptreact']}
+Plug 'yuezk/vim-js' 
 Plug 'elzr/vim-json'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'typescript.tsx', 'typescriptreact']}
+" Plug 'leafgarland/typescript-vim',
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescript.tsx', 'typescriptreact']} 
-Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescript.tsx', 'typescriptreact']}
+Plug 'peitalin/vim-jsx-typescript', {'for': ['javascript.jsx', 'typescript.tsx']}
+Plug 'HerringtonDarkholme/yats.vim', {'for': ['javascript.jsx', 'typescript.tsx']}
+Plug 'pangloss/vim-javascript',
 Plug 'tpope/vim-commentary'
 call plug#end()
-
+" {'for': ['javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescript.tsx', 'typescriptreact']}
 
 " Config  
   
@@ -107,7 +106,7 @@ highlight CursorLine guibg=#333333 ctermbg=234
 
 augroup SyntaxSettings
     autocmd!
-    autocmd BufNewFile,BufRead *.tsx set filetype=typescriptreact
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
