@@ -311,7 +311,8 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
-
+" alt + 3 ==> #
+inoremap <a-3> #
 
 " Tab Remaping
 nnoremap <silent><C-s> :tabnext<CR>
