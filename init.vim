@@ -107,9 +107,11 @@ highlight CursorLine guibg=#333333 ctermbg=234
 augroup SyntaxSettings
     autocmd!
     autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+    autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 augroup END
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
 
 
   "NERDTree
@@ -348,8 +350,9 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
+"
 " ignores .git, node_modules, etc...
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " Create default mappings
 let g:NERDCreateDefaultMappings = 1
