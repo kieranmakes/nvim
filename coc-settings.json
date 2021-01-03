@@ -17,5 +17,8 @@
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
   "diagnostic.checkCurrentLine": true,
-  "coc.preferences.diagnostic.virtualText": true
+  "coc.preferences.diagnostic.virtualText": true,
+  "cSpell.userWords": [
+    "Unmount"
+  ]
 }
