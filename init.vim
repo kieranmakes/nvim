@@ -2,6 +2,8 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim'
+Plug 'cristianoliveira/vim-react-html-snippets'
+"Plug 'SirVer/ultisnips'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdtree'
