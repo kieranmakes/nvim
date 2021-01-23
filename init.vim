@@ -2,8 +2,10 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim'
+Plug 'morhetz/gruvbox'
 Plug 'cristianoliveira/vim-react-html-snippets'
 "Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdtree'
@@ -18,7 +20,12 @@ Plug 'justinmk/vim-sneak'
 Plug 'yuezk/vim-js' 
 Plug 'elzr/vim-json'
 Plug 'maxmellon/vim-jsx-pretty'
+"Plug 'tomlion/vim-solidity'
+Plug 'TovarishFin/vim-solidity'
+Plug 'dmdque/solidity.vim'
+Plug 'tmhedberg/SimpylFold'
 " Plug 'leafgarland/typescript-vim',
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 Plug 'peitalin/vim-jsx-typescript', {'for': ['javascript.jsx', 'typescript.tsx']}
@@ -26,10 +33,8 @@ Plug 'HerringtonDarkholme/yats.vim', {'for': ['javascript.jsx', 'typescript.tsx'
 Plug 'pangloss/vim-javascript',
 Plug 'tpope/vim-commentary'
 call plug#end()
-" {'for': ['javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescript.tsx', 'typescriptreact']}
 
 " Config  
-  
   " basics
 syntax sync fromstart
 filetype plugin indent on
@@ -51,6 +56,7 @@ set shortmess+=c
 set updatetime=300
 set cmdheight=2
 set hidden
+set foldmethod=indent
 
   "coc extensions"
 let g:coc_global_extensions = [
@@ -62,7 +68,8 @@ let g:coc_global_extensions = [
   \'coc-tsserver',
   \'coc-eslint',
   \'coc-pairs',
-  \'coc-actions'
+  \'coc-actions',
+  \'coc-snippets'
   \ ] 
 
   " NERDTree Git  
@@ -97,14 +104,14 @@ if (has("termguicolors"))
  set termguicolors
 endif
 syntax enable
-colorscheme dracula
+colorscheme gruvbox
 
   " cursor line
 set cursorline
 hi cursorline cterm=none term=none
+highlight CursorLine guibg=#333333 ctermbg=234
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
-highlight CursorLine guibg=#333333 ctermbg=234
 
 augroup SyntaxSettings
     autocmd!
@@ -113,7 +120,6 @@ augroup SyntaxSettings
 augroup END
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
 
 
   "NERDTree
@@ -139,6 +145,8 @@ function! OpenTerminal()
   resize 10
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
+nmap <Leader>+ 10<C-W>+<CR>
+nmap <Leader>- 10<C-W>-<CR>
 
 " use alt+hjkl to move between split/vsplit panels
 tnoremap <A-h> <C-\><C-n><C-w>h
@@ -380,3 +388,144 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespce = 1
 
+
+
+
+" set to 1, nvim will open the preview window after entering the markdown buffer
+" default: 0
+let g:mkdp_auto_start = 1
+
+" set to 1, the nvim will auto close current preview window when change
+" from markdown buffer to another buffer
+" default: 1
+let g:mkdp_auto_close = 1
+
+" set to 1, the vim will refresh markdown when save the buffer or
+" leave from insert mode, default 0 is auto refresh markdown as you edit or
+" move the cursor
+" default: 0
+let g:mkdp_refresh_slow = 0
+
+" set to 1, the MarkdownPreview command can be use for all files,
+" by default it can be use in markdown file
+" default: 0
+let g:mkdp_command_for_global = 0
+
+" set to 1, preview server available to others in your network
+" by default, the server listens on localhost (127.0.0.1)
+" default: 0
+let g:mkdp_open_to_the_world = 1
+
+" use custom IP to open preview page
+" useful when you work in remote vim and preview on local browser
+" more detail see: https://github.com/iamcco/markdown-preview.nvim/pull/9
+" default empty
+let g:mkdp_open_ip = '127.0.0.1'
+
+" specify browser to open preview page
+" default: ''
+let g:mkdp_browser = ''
+
+" set to 1, echo preview page url in command line when open preview page
+" default is 0
+let g:mkdp_echo_preview_url = 1
+
+" a custom vim function name to open preview page
+" this function will receive url as param
+" default is empty
+let g:mkdp_browserfunc = ''
+
+" options for markdown render
+" mkit: markdown-it options for render
+" katex: katex options for math
+" uml: markdown-it-plantuml options
+" maid: mermaid options
+" disable_sync_scroll: if disable sync scroll, default 0
+" sync_scroll_type: 'middle', 'top' or 'relative', default value is 'middle'
+"   middle: mean the cursor position alway show at the middle of the preview page
+"   top: mean the vim top viewport alway show at the top of the preview page
+"   relative: mean the cursor position alway show at the relative positon of the preview page
+" hide_yaml_meta: if hide yaml metadata, default is 1
+" sequence_diagrams: js-sequence-diagrams options
+" content_editable: if enable content editable for preview page, default: v:false
+" disable_filename: if disable filename header for preview page, default: 0
+let g:mkdp_preview_options = {
+    \ 'mkit': {},
+    \ 'katex': {},
+    \ 'uml': {},
+    \ 'maid': {},
+    \ 'disable_sync_scroll': 0,
+    \ 'sync_scroll_type': 'middle',
+    \ 'hide_yaml_meta': 1,
+    \ 'sequence_diagrams': {},
+    \ 'flowchart_diagrams': {},
+    \ 'content_editable': v:false,
+    \ 'disable_filename': 0
+    \ }
+
+" use a custom markdown style must be absolute path
+" like '/Users/username/markdown.css' or expand('~/markdown.css')
+let g:mkdp_markdown_css = '/Users/kieranwilliams/.config/nvim/md-styles/github-dark.css'
+
+" use a custom highlight style must absolute path
+" like '/Users/username/highlight.css' or expand('~/highlight.css')
+let g:mkdp_highlight_css = ''
+
+" use a custom port to start server or random for empty
+let g:mkdp_port = ''
+
+" preview page title
+" ${name} will be replace with the file name
+let g:mkdp_page_title = '${name}'
+
+" recognized filetypes
+" these filetypes will have MarkdownPreview... commands
+let g:mkdp_filetypes = ['markdown']
+
+
+
+augroup quickfix
+  autocmd!
+  autocmd QuickFixCmdPost make nested copen
+augroup END
+
+
+
+
+
+noremap <silent> <Leader>w :call ToggleWrap()<CR>
+function ToggleWrap()
+   if &wrap
+    echo "Wrap OFF"
+    setlocal nowrap
+    set virtualedit=all
+    silent! nunmap <buffer> <Up>
+    silent! nunmap <buffer> <Down>
+    silent! nunmap <buffer> <Home>
+    silent! nunmap <buffer> <End>
+    silent! iunmap <buffer> <Up>
+    silent! iunmap <buffer> <Down>
+    silent! iunmap <buffer> <Home>
+    silent! iunmap <buffer> <End>
+  else
+    echo "Wrap ON"
+    setlocal wrap linebreak nolist
+    set virtualedit=
+    setlocal display+=lastline
+    noremap  <buffer> <silent> <Up>   gk
+    noremap  <buffer> <silent> <Down> gj
+    noremap  <buffer> <silent> <Home> g<Home>
+    noremap  <buffer> <silent> <End>  g<End>
+    inoremap <buffer> <silent> <Up>   <C-o>gk
+    inoremap <buffer> <silent> <Down> <C-o>gj
+    inoremap <buffer> <silent> <Home> <C-o>g<Home>
+    inoremap <buffer> <silent> <End>  <C-o>g<End>
+  endif
+endfunction
+
+noremap <silent> k gk
+noremap <silent> j gj
+noremap <silent> 0 g0
+noremap <silent> $ g$
+
+let g:SimpylFold_docstring_preview = 1

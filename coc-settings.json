@@ -18,7 +18,6 @@
   "coc.preferences.formatOnType": true,
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.diagnostic.virtualText": true,
-  "cSpell.userWords": [
-    "Unmount"
-  ]
+  "cSpell.userWords": ["Unmount"],
+  "eslint.enable": false
 }
