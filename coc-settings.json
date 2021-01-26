@@ -20,5 +20,5 @@
   "coc.preferences.diagnostic.virtualText": true,
   "cSpell.userWords": ["Unmount"],
   "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
-  "eslint.enable": false
+  "eslint.enable": true
 }
