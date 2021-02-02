@@ -33,3 +33,7 @@ noremap <silent> j gj
 noremap <silent> 0 g0
 noremap <silent> $ g$
 
+" ctrl J does the opposite of shift J
+nnoremap <C-J> a<CR><Esc>k$
+" nnoremap <C-J> ciW<CR><Esc>:if match( @", "^\\s*$") < 0<Bar>exec "norm P-$diw+"<Bar>endif<CR>
+
