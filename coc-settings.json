@@ -18,10 +18,7 @@
   "coc.preferences.formatOnType": true,
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.diagnostic.virtualText": true,
-  "cSpell.userWords": [
-    "Behaviours",
-    "Unmount"
-  ],
+  "cSpell.userWords": ["Behaviours", "Unmount"],
   "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
   "eslint.enable": true
 }
