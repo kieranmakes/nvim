@@ -8,10 +8,12 @@ let g:coc_global_extensions = [
   \'coc-prettier', 
   \'coc-tsserver',
   \'coc-eslint',
+  \'coc-python',
   \'coc-pairs',
   \'coc-actions',
-  \'coc-snippets'
-  \ ] 
+  \'coc-snippets',
+  \'coc-omnisharp',
+  \]
 
   " coc set up 
 " Use tab for trigger completion with characters ahead and navigate.

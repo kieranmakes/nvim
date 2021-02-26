@@ -18,7 +18,18 @@
   "coc.preferences.formatOnType": true,
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.diagnostic.virtualText": true,
-  "cSpell.userWords": ["Behaviours", "Unmount"],
+  "cSpell.userWords": [
+    "Behaviours",
+    "COVID",
+    "Clwster",
+    "DVLA",
+    "Favourite",
+    "Kieran's",
+    "Tantrwm",
+    "Unmount",
+    "dogeer",
+    "prioritise"
+  ],
   "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
   "eslint.enable": true
 }

@@ -19,6 +19,8 @@ Plug 'elzr/vim-json'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'TovarishFin/vim-solidity'
 Plug 'dmdque/solidity.vim'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'OrangeT/vim-csharp'
 Plug 'tmhedberg/SimpylFold'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -44,6 +46,8 @@ source <sfile>:h/setup/nerd-commenter.vim
 source <sfile>:h/setup/coc-setup.vim
 " React development setup
 source <sfile>:h/setup/react-setup.vim
+" OmniSharp development setup
+source <sfile>:h/setup/omnisharp-setup.vim
 " fuzzy finder setup 
 source <sfile>:h/setup/fzf-setup.vim
 " terminal setup

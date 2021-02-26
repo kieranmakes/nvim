@@ -32,7 +32,7 @@ endfunction
 
 " copy the current working directory 
 " to clipboard with \cwd
-noremap <silent> <Leader>cwd :call CwdCopy()<CR>
+noremap <silent> <Leader>cwd :call CwdCopy()<CR><CR>
 function CwdCopy() 
   execute "!pwd|pbcopy"
 endfunction
