@@ -24,3 +24,4 @@ set hidden
 set foldmethod=indent
 set splitright
 set splitbelow
+set mouse=a

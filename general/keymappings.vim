@@ -37,3 +37,18 @@ noremap <silent> $ g$
 nnoremap <C-J> a<CR><Esc>k$
 nnoremap <leader>j $a<CR><Esc>
 
+" Resize buffers
+" width
+nnoremap <C-w>+ :vertical resize +5<CR>
+nnoremap <C-w>++ :vertical resize +10<CR>
+nnoremap <C-w>+++ :vertical resize +20<CR>
+nnoremap <C-w>- :vertical resize -5<CR>
+nnoremap <C-w>-- :vertical resize -10<CR>
+nnoremap <C-w>--- :vertical resize -20<CR>
+"height
+nnoremap <C-h>+ :resize +5<CR>
+nnoremap <C-h>++ :resize +10<CR>
+nnoremap <C-h>+++ :resize +20<CR>
+nnoremap <C-h>- :resize -5<CR>
+nnoremap <C-h>-- :resize -10<CR>
+nnoremap <C-h>--- :resize -20<CR>

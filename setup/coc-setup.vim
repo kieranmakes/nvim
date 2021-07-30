@@ -13,6 +13,10 @@ let g:coc_global_extensions = [
   \'coc-actions',
   \'coc-snippets',
   \'coc-omnisharp',
+  \'coc-docker',
+  \'coc-scssmodules',
+  \'coc-rust-analyzer',
+  \'coc-ccls',
   \]
 
   " coc set up 

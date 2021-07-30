@@ -25,10 +25,20 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
-Plug 'peitalin/vim-jsx-typescript', {'for': ['javascript.jsx', 'typescript.tsx']}
-Plug 'HerringtonDarkholme/yats.vim', {'for': ['javascript.jsx', 'typescript.tsx']}
+" Plug 'peitalin/vim-jsx-typescript', {'for': ['javascript.jsx', 'typescript.tsx']}
+" Plug 'HerringtonDarkholme/yats.vim', {'for': ['javascript.jsx', 'typescript.tsx']}
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'SirVer/ultisnips'
+Plug 'mlaursen/vim-react-snippets'
 Plug 'pangloss/vim-javascript',
 Plug 'tpope/vim-commentary'
+Plug 'aklt/plantuml-syntax'
+Plug 'scrooloose/vim-slumlord'
+Plug 'rust-lang-nursery/rustfmt'
+Plug 'neovimhaskell/haskell-vim'
+" Plug 'vim-scripts/c.vim'
+" Plug 'justmao945/vim-clang'
 call plug#end()
 
 
@@ -48,6 +58,8 @@ source <sfile>:h/setup/coc-setup.vim
 source <sfile>:h/setup/react-setup.vim
 " OmniSharp development setup
 source <sfile>:h/setup/omnisharp-setup.vim
+" Haskell Development setup
+source <sfile>:h/setup/haskell-setup.vim
 " fuzzy finder setup 
 source <sfile>:h/setup/fzf-setup.vim
 " terminal setup
@@ -56,4 +68,6 @@ source <sfile>:h/setup/terminal-setup.vim
 source <sfile>:h/general/functions.vim
 " custom key mappings for general things
 source <sfile>:h/general/keymappings.vim
+" autocommands
+source <sfile>:h/general/autocommands.vim
 
