@@ -25,6 +25,9 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
+" Save file with ctrl + s
+nnoremap <C-s> :w<CR>
+ 
 
 " Normal mode movements are as they 
 " would be normally on wrapped text 
