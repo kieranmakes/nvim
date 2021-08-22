@@ -8,7 +8,6 @@ let g:coc_global_extensions = [
   \'coc-prettier', 
   \'coc-tsserver',
   \'coc-eslint',
-  \'coc-python',
   \'coc-pairs',
   \'coc-actions',
   \'coc-snippets',
@@ -17,6 +16,8 @@ let g:coc_global_extensions = [
   \'coc-scssmodules',
   \'coc-rust-analyzer',
   \'coc-ccls',
+  \'coc-jedi',
+  \'coc-pyright',
   \]
 
   " coc set up 

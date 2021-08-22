@@ -27,7 +27,10 @@ nnoremap <A-l> <C-w>l
 
 " Save file with ctrl + s
 nnoremap <C-s> :w<CR>
- 
+
+" Horizontal scroll
+map <C-L> 20zl 
+map <C-H> 20zh
 
 " Normal mode movements are as they 
 " would be normally on wrapped text 

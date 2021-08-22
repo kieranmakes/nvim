@@ -11,6 +11,13 @@
         "hie.yaml"
       ],
       "filetypes": ["haskell", "lhaskell"]
+    },
+    "solidity": {
+      "command": "./solc/solc-linux64",
+      "args": ["--lsp"],
+      "trace.server": "verbose",
+      "rootPatterns": [".git/"],
+      "filetypes": ["solidity"]
     }
   },
   "coc.preferences.formatOnSaveFiletypes": [
@@ -45,5 +52,6 @@
     "prioritise"
   ],
   "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
-  "eslint.enable": true
+  "eslint.enable": true,
+  "python.pythonPath": "python"
 }

@@ -60,6 +60,8 @@ source <sfile>:h/setup/react-setup.vim
 source <sfile>:h/setup/omnisharp-setup.vim
 " Haskell Development setup
 source <sfile>:h/setup/haskell-setup.vim
+" Python development enviroment
+source <sfile>:h/setup/python.vim
 " fuzzy finder setup 
 source <sfile>:h/setup/fzf-setup.vim
 " terminal setup
