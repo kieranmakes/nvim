@@ -5,7 +5,7 @@ syntax sync fromstart
 filetype plugin indent on
 syntax on 
 set number
-set relativenumber
+" set relativenumber
 set incsearch
 set ignorecase
 set smartcase

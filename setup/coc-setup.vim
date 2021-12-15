@@ -18,6 +18,7 @@ let g:coc_global_extensions = [
   \'coc-ccls',
   \'coc-jedi',
   \'coc-pyright',
+  \'coc-java',
   \]
 
   " coc set up 

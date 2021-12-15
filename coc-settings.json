@@ -53,5 +53,11 @@
   ],
   "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
   "eslint.enable": true,
-  "python.pythonPath": "python"
+  "python.pythonPath": "python",
+  "java.configuration.runtimes": [
+    {
+      "path": "/Library/Java/JavaVirtualMachines/jdk-17.jdk",
+      "default": true
+    }
+  ]
 }

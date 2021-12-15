@@ -26,6 +26,7 @@ nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
 " Save file with ctrl + s
+inoremap <C-s> <C-c>:w<CR>i
 nnoremap <C-s> :w<CR>
 
 " Horizontal scroll
