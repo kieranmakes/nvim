@@ -15,7 +15,6 @@ let g:coc_global_extensions = [
   \'coc-docker',
   \'coc-scssmodules',
   \'coc-rust-analyzer',
-  \'coc-ccls',
   \'coc-jedi',
   \'coc-pyright',
   \'coc-java',

@@ -1,5 +1,5 @@
 " Plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/autoload/')
 Plug 'dracula/vim'
 Plug 'cristianoliveira/vim-react-html-snippets'
 Plug 'honza/vim-snippets'
