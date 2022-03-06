@@ -18,7 +18,7 @@ endif
 syntax enable
 colorscheme dracula
 
-
+hi Normal ctermbg=None guibg=None
   " cursor line
 set cursorline
 hi cursorline cterm=none term=none
