@@ -39,8 +39,11 @@ Plug 'rust-lang-nursery/rustfmt'
 Plug 'neovimhaskell/haskell-vim'
 " Plug 'vim-scripts/c.vim'
 " Plug 'justmao945/vim-clang'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
 call plug#end()
-
 
 " settings
 source <sfile>:h/general/settings.vim
@@ -62,6 +65,8 @@ source <sfile>:h/setup/omnisharp-setup.vim
 source <sfile>:h/setup/haskell-setup.vim
 " Python development enviroment
 source <sfile>:h/setup/python.vim
+" telescope setup
+source <sfile>:h/setup/telescope.vim
 " fuzzy finder setup 
 source <sfile>:h/setup/fzf-setup.vim
 " terminal setup
