@@ -39,10 +39,15 @@ Plug 'rust-lang-nursery/rustfmt'
 Plug 'neovimhaskell/haskell-vim'
 " Plug 'vim-scripts/c.vim'
 " Plug 'justmao945/vim-clang'
+
+"telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
+Plug 'fannheyward/telescope-coc.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+
 call plug#end()
 
 " settings
