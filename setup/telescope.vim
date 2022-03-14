@@ -11,16 +11,22 @@ nnoremap <C-_> <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find({
 
 " lua require('telescope')
 lua << EOF
+local actions = require "telescope.actions";
 require('telescope').setup{
   defaults = {
-      prompt_prefix = "$ ",
+      prompt_prefix = "$  ",
       mappings = {
         i = {
-          ["<c-a>"] = function() print("blah") end
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
+          ["<C-n>"] = actions.cycle_history_next,
+          ["<C-p>"] = actions.cycle_history_prev,
+          ["<C-i>"] = actions.select_horizontal,
+          ["<C-s>"] = actions.select_vertical,
         },
-      }
+      },
+      file_ignore_patterns = {'node_modules/.*'}
     },
-  file_ignore_patterns = {"node_modules" }
 }
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('coc')

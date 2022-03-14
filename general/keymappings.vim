@@ -40,6 +40,10 @@ noremap <silent> j gj
 noremap <silent> 0 g0
 noremap <silent> $ g$
 
+" yank to end of line with Y
+nnoremap Y y$
+
+
 " ctrl J does the opposite of shift J
 nnoremap <C-J> a<CR><Esc>k$
 nnoremap <leader>j $a<CR><Esc>

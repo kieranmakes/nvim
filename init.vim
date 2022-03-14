@@ -27,6 +27,11 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 " Plug 'peitalin/vim-jsx-typescript', {'for': ['javascript.jsx', 'typescript.tsx']}
 " Plug 'HerringtonDarkholme/yats.vim', {'for': ['javascript.jsx', 'typescript.tsx']}
+
+Plug 'leafgarland/typescript-vim'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
+
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'SirVer/ultisnips'
