@@ -34,7 +34,7 @@ Plug 'jparise/vim-graphql'
 
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'pangloss/vim-javascript',
 Plug 'tpope/vim-commentary'
