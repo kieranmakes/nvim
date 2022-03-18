@@ -25,6 +25,9 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
+" source current file
+nnoremap <leader>s :source %<CR>
+
 " Save file with ctrl + s
 inoremap <C-s> <C-c>:w<CR>i
 nnoremap <C-s> :w<CR>

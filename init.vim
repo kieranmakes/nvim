@@ -45,13 +45,19 @@ Plug 'neovimhaskell/haskell-vim'
 " Plug 'vim-scripts/c.vim'
 " Plug 'justmao945/vim-clang'
 
-"telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+"telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+
+Plug 'ThePrimeagen/harpoon'
+
+Plug 'mhinz/vim-startify'
+
+
 
 call plug#end()
 
@@ -77,6 +83,10 @@ source <sfile>:h/setup/haskell-setup.vim
 source <sfile>:h/setup/python.vim
 " telescope setup
 source <sfile>:h/setup/telescope.vim
+" harpoon setup
+source <sfile>:h/setup/harpoon.vim
+" startify setup
+source <sfile>:h/setup/startify_setup.vim
 " fuzzy finder setup 
 source <sfile>:h/setup/fzf-setup.vim
 " terminal setup
@@ -87,4 +97,7 @@ source <sfile>:h/general/functions.vim
 source <sfile>:h/general/keymappings.vim
 " autocommands
 source <sfile>:h/general/autocommands.vim
+
+let g:UltiSnipsExpandTrigger = "<nop>"
+
 
