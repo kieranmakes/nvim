@@ -87,6 +87,8 @@ source <sfile>:h/setup/telescope.vim
 source <sfile>:h/setup/harpoon.vim
 " startify setup
 source <sfile>:h/setup/startify_setup.vim
+" ultisnips setup 
+source <sfile>:h/setup/ultisnips.vim
 " fuzzy finder setup 
 source <sfile>:h/setup/fzf-setup.vim
 " terminal setup
@@ -98,6 +100,5 @@ source <sfile>:h/general/keymappings.vim
 " autocommands
 source <sfile>:h/general/autocommands.vim
 
-let g:UltiSnipsExpandTrigger = "<nop>"
 
 
