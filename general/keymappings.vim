@@ -10,7 +10,10 @@ nnoremap <A-l> <C-w>l
 
 " alt + 3 ==> #
 inoremap <a-3> #
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
+ 
 " Tab Remaping
 nnoremap <silent><C-s> :tabnext<CR>
 nnoremap <silent><C-a> :tabprevious<CR>
@@ -66,3 +69,8 @@ nnoremap <C-h>+++ :resize +20<CR>
 nnoremap <C-h>- :resize -5<CR>
 nnoremap <C-h>-- :resize -10<CR>
 nnoremap <C-h>--- :resize -20<CR>
+
+" speed up scroll down and up 
+nnoremap <C-e> 5<C-e>
+nnoremap <C-y> 5<C-y>
+

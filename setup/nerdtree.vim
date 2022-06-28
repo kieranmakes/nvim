@@ -24,4 +24,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Toggle
 nnoremap <silent><C-b> :NERDTreeToggle<CR>
 nnoremap <leader><C-B> :NERDTreeFind<CR>
+nnoremap <leader><C-B> :NERDTreeFind<CR>
+nnoremap <space><C-B> :NERDTreeRefreshRoot<CR>
 

@@ -11,13 +11,6 @@
         "hie.yaml"
       ],
       "filetypes": ["haskell", "lhaskell"]
-    },
-    "solidity": {
-      "command": "./solc/solc-linux64",
-      "args": ["--lsp"],
-      "trace.server": "verbose",
-      "rootPatterns": [".git/"],
-      "filetypes": ["solidity"]
     }
   },
   "coc.preferences.formatOnSaveFiletypes": [
@@ -57,8 +50,10 @@
   "python.pythonPath": "python",
   "java.configuration.runtimes": [
     {
-      "path": "/Library/Java/JavaVirtualMachines/jdk-17.jdk",
+      "path": "/Library/Java/JavaVirtualMachines/jdk-18.jdk",
       "default": true
     }
-  ]
+  ],
+  "rust-analyzer.inlayHints.enable": true,
+  "rust-analyzer.diagnostics.disabled": ["macro-error", "unresolved-proc-macro"]
 }

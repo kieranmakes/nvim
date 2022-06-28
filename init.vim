@@ -22,7 +22,7 @@ Plug 'dmdque/solidity.vim'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'OrangeT/vim-csharp'
 Plug 'tmhedberg/SimpylFold'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 " Plug 'peitalin/vim-jsx-typescript', {'for': ['javascript.jsx', 'typescript.tsx']}
@@ -56,17 +56,24 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ThePrimeagen/harpoon'
 
 Plug 'mhinz/vim-startify'
+Plug 'wesQ3/vim-windowswap'
+
+Plug 'tikhomirov/vim-glsl'
+
+" Plug 'williamboman/nvim-lsp-installer'
+" Plug 'neovim/nvim-lspconfig'
 
 
 
 call plug#end()
+
 
 " settings
 source <sfile>:h/general/settings.vim
 " editor look set up
 source <sfile>:h/setup/editor-setup.vim
 " markdown-preview plugin setup
-source <sfile>:h/setup/markdown-preview.vim
+" source <sfile>:h/setup/markdown-preview.vim
 " nerdtree setup
 source <sfile>:h/setup/nerdtree.vim
 " nerd commenter setup 
@@ -94,11 +101,11 @@ source <sfile>:h/setup/fzf-setup.vim
 " terminal setup
 source <sfile>:h/setup/terminal-setup.vim
 " custom functions
-source <sfile>:h/general/functions.vim
+:source <sfile>:h/general/functions.vim
 " custom key mappings for general things
 source <sfile>:h/general/keymappings.vim
 " autocommands
 source <sfile>:h/general/autocommands.vim
 
-
-
+lua << EOF
+EOF

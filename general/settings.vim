@@ -16,7 +16,7 @@ set shiftwidth=2
 set expandtab
 set nobackup
 set noswapfile
-set nowrap
+" set nowrap
 set shortmess+=c
 set updatetime=300
 set cmdheight=2

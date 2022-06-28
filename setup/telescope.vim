@@ -14,21 +14,26 @@ lua << EOF
 local actions = require "telescope.actions";
 require('telescope').setup{
   defaults = {
-      prompt_prefix = "$  ",
-      mappings = {
-        i = {
-          ["<C-j>"] = actions.move_selection_next,
-          ["<C-k>"] = actions.move_selection_previous,
-          ["<C-n>"] = actions.cycle_history_next,
-          ["<C-p>"] = actions.cycle_history_prev,
-          ["<C-i>"] = actions.select_horizontal,
-          ["<C-s>"] = actions.select_vertical,
-        },
+    layout_config = {
+      horizontal = {
+        preview_cutoff = 0
       },
-      file_ignore_patterns = {'node_modules/.*'}
     },
+    prompt_prefix = "$  ",
+    mappings = {
+      i = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-n>"] = actions.cycle_history_next,
+        ["<C-p>"] = actions.cycle_history_prev,
+        ["<C-i>"] = actions.select_horizontal,
+        ["<C-s>"] = actions.select_vertical,
+      },
+    },
+    file_ignore_patterns = {'node_modules/.*'},
+  },
 }
-require('telescope').load_extension('fzf')
+-- require('telescope').load_extension('fzf')
 require('telescope').load_extension('coc')
 require('telescope').load_extension('harpoon')
 EOF
