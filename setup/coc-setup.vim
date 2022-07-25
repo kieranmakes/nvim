@@ -19,6 +19,7 @@ let g:coc_global_extensions = [
   \'coc-pyright',
   \'coc-java',
   \'coc-tabnine',
+  \'coc-spell-checker',
   \]
 
   " coc set up 
@@ -162,5 +163,5 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-nnoremap <silent><nowait> <space>cr  :CocRestart
+nnoremap <silent><nowait> <space>cr  :CocRestart<CR>
 

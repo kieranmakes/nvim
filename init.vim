@@ -60,6 +60,8 @@ Plug 'wesQ3/vim-windowswap'
 
 Plug 'tikhomirov/vim-glsl'
 
+Plug 'tpope/vim-fugitive'
+
 " Plug 'williamboman/nvim-lsp-installer'
 " Plug 'neovim/nvim-lspconfig'
 

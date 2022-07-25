@@ -28,7 +28,15 @@
     "javascriptreact",
     "typescript.tsx"
   ],
-  "html.filetypes": ["html", "ejs", "javascript", "typescript", "js", "jsx"],
+  "html.filetypes": [
+    "html",
+    "ejs",
+    "javascript",
+    "typescript",
+    "js",
+    "jsx",
+    "ftl"
+  ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
   "diagnostic.checkCurrentLine": true,
