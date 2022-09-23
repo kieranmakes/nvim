@@ -25,6 +25,8 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
+
+Plug 'tikhomirov/vim-glsl'
 " Plug 'peitalin/vim-jsx-typescript', {'for': ['javascript.jsx', 'typescript.tsx']}
 " Plug 'HerringtonDarkholme/yats.vim', {'for': ['javascript.jsx', 'typescript.tsx']}
 
@@ -108,6 +110,10 @@ source <sfile>:h/setup/terminal-setup.vim
 source <sfile>:h/general/keymappings.vim
 " autocommands
 source <sfile>:h/general/autocommands.vim
+
+if has('nvim') && !empty($CONDA_PREFIX)
+  let g:python3_host_prog = $CONDA_PREFIX . '/bin/python3.9'
+endif
 
 lua << EOF
 EOF

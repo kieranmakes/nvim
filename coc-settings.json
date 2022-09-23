@@ -63,5 +63,11 @@
     }
   ],
   "rust-analyzer.inlayHints.enable": true,
-  "rust-analyzer.diagnostics.disabled": ["macro-error", "unresolved-proc-macro"]
+  "rust-analyzer.diagnostics.disabled": [
+    "macro-error",
+    "unresolved-proc-macro"
+  ],
+  "clangd.fallbackFlags": ["-std=c++17"],
+  "cSpell.enabled": false,
+  "python.analysis.useLibraryCodeForTypes": false
 }
