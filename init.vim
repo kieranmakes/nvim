@@ -64,8 +64,12 @@ Plug 'tikhomirov/vim-glsl'
 
 Plug 'tpope/vim-fugitive'
 
+
 " Plug 'williamboman/nvim-lsp-installer'
 " Plug 'neovim/nvim-lspconfig'
+
+
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 
 
@@ -102,6 +106,8 @@ source <sfile>:h/setup/startify_setup.vim
 source <sfile>:h/setup/ultisnips.vim
 " fuzzy finder setup 
 source <sfile>:h/setup/fzf-setup.vim
+" firenvim setup
+source <sfile>:h/setup/firenvim.vim
 " terminal setup
 source <sfile>:h/setup/terminal-setup.vim
 " custom functions
@@ -111,9 +117,9 @@ source <sfile>:h/general/keymappings.vim
 " autocommands
 source <sfile>:h/general/autocommands.vim
 
-if has('nvim') && !empty($CONDA_PREFIX)
-  let g:python3_host_prog = $CONDA_PREFIX . '/bin/python3.9'
-endif
+
+
+
 
 lua << EOF
 EOF
